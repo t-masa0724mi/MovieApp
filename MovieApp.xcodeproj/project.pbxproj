@@ -17,6 +17,8 @@
 		E282BCCE2A4D7CBB00C8869D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BCCD2A4D7CBB00C8869D /* ImageLoader.swift */; };
 		E282BCD22A4D7CF500C8869D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BCD12A4D7CF500C8869D /* Movie.swift */; };
 		E282BCD62A4D7D3400C8869D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BCD52A4D7D3400C8869D /* Constants.swift */; };
+		E282BCD82A527DB200C8869D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E282BCD72A527DB200C8869D /* HTTPClient.swift */; };
+		E2D905032A52923F0065ADD7 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D905022A52923F0065ADD7 /* URL+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,9 @@
 		E282BCCD2A4D7CBB00C8869D /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		E282BCD12A4D7CF500C8869D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E282BCD52A4D7D3400C8869D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E282BCD72A527DB200C8869D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E2D905012A528C520065ADD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E2D905022A52923F0065ADD7 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,7 @@
 		E282BCB02A4D7A8A00C8869D /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				E2D905012A528C520065ADD7 /* Info.plist */,
 				E282BCD42A4D7D1A00C8869D /* Utils */,
 				E282BCD32A4D7D0200C8869D /* View Models */,
 				E282BCD02A4D7CDC00C8869D /* Models */,
@@ -106,6 +112,7 @@
 		E282BCC62A4D7C3300C8869D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E2D905022A52923F0065ADD7 /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 		E282BCCF2A4D7CCD00C8869D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E282BCD72A527DB200C8869D /* HTTPClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -232,7 +240,9 @@
 				E282BCCB2A4D7C9000C8869D /* URLImage.swift in Sources */,
 				E282BCB42A4D7A8A00C8869D /* ContentView.swift in Sources */,
 				E282BCC92A4D7C6E00C8869D /* Rating.swift in Sources */,
+				E282BCD82A527DB200C8869D /* HTTPClient.swift in Sources */,
 				E282BCD22A4D7CF500C8869D /* Movie.swift in Sources */,
+				E2D905032A52923F0065ADD7 /* URL+Extensions.swift in Sources */,
 				E282BCC42A4D7C0E00C8869D /* SceneDelegate.swift in Sources */,
 				E282BCD62A4D7D3400C8869D /* Constants.swift in Sources */,
 			);
@@ -366,12 +376,14 @@
 				DEVELOPMENT_TEAM = 2WY4RH7F35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MovieApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,12 +408,14 @@
 				DEVELOPMENT_TEAM = 2WY4RH7F35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MovieApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
