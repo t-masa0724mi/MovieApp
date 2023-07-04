@@ -3,12 +3,12 @@ import Foundation
 enum NetworkError: Error {
     case badURL
     case noData
-    case decofingError
+    case decodingError
 }
 
 class HTTPClient {
     
-    func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail,NetworkError>) -> Void) {
+    func getMovieDetailsBy(imdbId: String, completion: @escaping (Result<MovieDetail, NetworkError>) -> Void) {
         
         guard let url = URL.forMoviesByImdbId(imdbId) else {
             return completion(.failure(.badURL))
@@ -20,16 +20,18 @@ class HTTPClient {
             }
             
             guard let movieDetail = try? JSONDecoder().decode(MovieDetail.self, from: data) else {
-                return completion(.failure(.decofingError))
+                return completion(.failure(.decodingError))
             }
             
             completion(.success(movieDetail))
-        }
+            
+        }.resume()
+        
     }
     
     func getMoviesBy(search: String, completion: @escaping (Result<[Movie]?,NetworkError>) -> Void) {
         guard let url = URL.forMoviesByName(search) else {
-            return completion(.failure(.badURL ))
+            return completion(.failure(.badURL))
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -38,7 +40,7 @@ class HTTPClient {
             }
             
             guard let moviesResponse = try? JSONDecoder().decode(MovieRespose.self, from: data) else {
-                return completion(.failure(.decofingError))
+                return completion(.failure(.decodingError))
             }
             
             completion(.success(moviesResponse.movies))
